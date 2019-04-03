@@ -8,15 +8,12 @@ $borderWidth: 5px;
 	right: 0;
 	left: 0;
 	margin: auto;
-	display: block;
 	width: $size;
 	height: $size + $borderWidth * 2;
 }
 
 .rect {
 	margin: 0 auto;
-
-	display: block;
 	width: $size;
 	height: $size;
 	border-bottom: $borderWidth solid #000;
@@ -43,92 +40,185 @@ $borderWidth: 5px;
 		border-right: $borderWidth solid #000;
 	}
 	&:hover {
-		cursor: pointer;
+		border-color: grey;
 		border-bottom-style: dashed;
 		border-top-style: dashed;
-		border-color: grey;
-		&::before {
-			border-left-style: dashed;
-			border-bottom-style: dashed;			
+		cursor: pointer;
+		&::before {			
 			border-color: grey;
+			border-bottom-style: dashed;
+			border-left-style: dashed;
 		}
 		&::after {
-			border-right-style: dashed;
 			border-color: grey;
+			border-right-style: dashed;
 		}
 		.animation {
 			&-1 {			
 				opacity: 1;
-				//animation: ani linear 2s;
-				animation: an-left linear 2s;
-				//animation: anim-left linear 6s infinite;
+				animation: anim-left linear 3.2s infinite;
 			}
-			&-2 {				
-			//	animation: ani linear 2s;	
-				//animation: anim-bottom linear 6s infinite;
+			&-2 {					
+				animation: anim-bottom linear 3.2s infinite;
+				animation-delay: 0.4s;
 			}
 			&-3 {
-				//animation: anim-right linear 6s infinite;
+				animation: anim-right linear 3.2s infinite;
+				animation-delay: 0.8s;
 			}
 			&-4 {
-				//animation: anim-bottom-2 linear 6s infinite;
+				animation: anim-bottom-2 linear 3.2s infinite;
+				animation-delay: 1.2s;
 			}
 			&-5 {
-				//animation: anim-left-2 linear 6s infinite;
+				animation: anim-left-2 linear 3.2s infinite;
+				animation-delay: 1.6s;
 			}
 		}
 	}
 }
 
 .animation {
-	//height: $borderWidth;
-	//width: $borderWidth;
-	width: 20px;
-	height: 20px;
+	height: $borderWidth;
+	width: $borderWidth;
 	background: blue;
 	position: absolute;
 	right: 9px;
-	display: block;
 	z-index: 1000;
 	&-1 {
+		width: 0;
 		top: -1 * $borderWidth;
 		right: 0;
 	}
 	&-2 {
+		height: 0;
 		top: -1 * $borderWidth;
 		left: 0;
 	}
 	&-3 {
+		width: 0;
 		top: $size / 2;
 		left: 0;
 	}
 	&-4 {
+		height: 0;
 		top: $size / 2;
 		right: 0;
 	}
 	&-5 {
+		width: 0;
 		bottom: -1 * $borderWidth;
 		right: 0;
 	}
 }
 
-@keyframes an-left {
+@keyframes anim-left {
 	0% {
-		width: 20px;
+		right: 0;
+		width: 0;
 	}
-	20% {
-		width: 100%;
+	10% {		
+		right: 0;
+		width: $size;
 	}
-	70% {
-		width: 100%;
+	25% {
+		right: 0;
+		width: $size;
+	}
+	35% {				
+		right: $size - $borderWidth;
+		width: 0;
+	}
+	50% {
+		right: $size - $borderWidth;
+		width: 0;
+	}
+}
+
+@keyframes anim-bottom {
+	0% {
+		top: -1 * $borderWidth;
+		height: $borderWidth;
+	}
+	10% {
+		top: -1 * $borderWidth;
+		height: $size / 2 + $borderWidth;
+	}
+	25% {
+		top: -1 * $borderWidth;
+		height: $size / 2 + $borderWidth;
+	}
+	35% {
+		top: $size / 2;
+		height: 0;
+	}
+	50% {			
+		top: $size / 2;
+		height: 0;
+	}
+}
+
+@keyframes anim-right {
+	0% {
 		left: 0;
+		width: $borderWidth;
 	}
-	90% {
-		width: 20px;
+	10% {
 		left: 0;
+		width: $size;
 	}
-	100% {
-		width: 20px;
+	25% {
 		left: 0;
+		width: $size;
+	}
+	35% {			
+		left: $size - $borderWidth;
+		width: 0;
+	}
+	50% {			
+		left: $size - $borderWidth;
+		width: 0;
+	}
+}
+
+@keyframes anim-bottom-2 {
+	0% {
+		top: $size / 2;
+		height: $borderWidth;
+	}
+	10% {
+		top: $size / 2;
+		height: $size / 2 + $borderWidth;
+	}
+	25% {
+		top: $size / 2;
+		height: $size / 2 + $borderWidth;
+	}
+	35% {			
+		top: $size;
+		height: 0;
+	}
+	50% {			
+		top: $size;
+		height: 0;
+	}
+}
+
+@keyframes anim-left-2 {
+	0% {
+		right: 0;
+		width: 0;
+	}
+	10% {		
+		right: 0;
+		width: $size;
+	}
+	25% {
+		right: 0;
+		width: $size;
+	}
+	35% {				
+		right: $size;
+		width: 0;
 	}
 }
