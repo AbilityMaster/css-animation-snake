@@ -56,56 +56,57 @@ $borderWidth: 5px;
 		.animation {
 			&-1 {			
 				opacity: 1;
-				animation: anim-left linear 3.2s infinite;
+				animation: anim-left linear 4s infinite;
 			}
 			&-2 {					
-				animation: anim-bottom linear 3.2s infinite;
-				animation-delay: 0.4s;
+				animation: anim-bottom linear 4s infinite;
 			}
 			&-3 {
-				animation: anim-right linear 3.2s infinite;
-				animation-delay: 0.8s;
+				animation: anim-right linear 4s infinite;
 			}
 			&-4 {
-				animation: anim-bottom-2 linear 3.2s infinite;
-				animation-delay: 1.2s;
+				animation: anim-bottom-2 linear 4s infinite;
 			}
 			&-5 {
-				animation: anim-left-2 linear 3.2s infinite;
-				animation-delay: 1.6s;
+				animation: anim-left-2 linear 4s infinite;
 			}
 		}
 	}
 }
 
 .animation {
-	height: $borderWidth;
-	width: $borderWidth;
+	//height: $borderWidth;
+	//width: $borderWidth;
 	background: blue;
 	position: absolute;
 	right: 9px;
 	z-index: 1000;
 	&-1 {
+		height: $borderWidth;
 		width: 0;
 		top: -1 * $borderWidth;
 		right: 0;
 	}
 	&-2 {
+		width: $borderWidth;
 		height: 0;
 		top: -1 * $borderWidth;
 		left: 0;
 	}
 	&-3 {
+		height: $borderWidth;
 		width: 0;
 		top: $size / 2;
 		left: 0;
 	}
 	&-4 {
+		width: $borderWidth;
 		height: 0;
 		top: $size / 2;
 		right: 0;
 	}
 	&-5 {
+		height: $borderWidth;
 		width: 0;
 		bottom: -1 * $borderWidth;
 		right: 0;
@@ -117,107 +118,107 @@ $borderWidth: 5px;
 		right: 0;
 		width: 0;
 	}
-	10% {		
+	15% {		
 		right: 0;
 		width: $size;
 	}
-	25% {
+	30% {
 		right: 0;
 		width: $size;
 	}
-	35% {				
+	45% {				
 		right: $size - $borderWidth;
 		width: 0;
 	}
-	50% {
+	60% {
 		right: $size - $borderWidth;
 		width: 0;
 	}
 }
 
 @keyframes anim-bottom {
-	0% {
+	15% {
 		top: -1 * $borderWidth;
-		height: $borderWidth;
+		height: 0;
 	}
-	10% {
-		top: -1 * $borderWidth;
-		height: $size / 2 + $borderWidth;
-	}
-	25% {
+	30% {
 		top: -1 * $borderWidth;
 		height: $size / 2 + $borderWidth;
 	}
-	35% {
+	45% {
+		top: -1 * $borderWidth;
+		height: $size / 2 + $borderWidth;
+	}
+	60% {
 		top: $size / 2;
 		height: 0;
 	}
-	50% {			
+	75% {			
 		top: $size / 2;
 		height: 0;
 	}
 }
 
 @keyframes anim-right {
-	0% {
+	30% {
 		left: 0;
-		width: $borderWidth;
+		width: 0;
 	}
-	10% {
-		left: 0;
-		width: $size;
-	}
-	25% {
+	45% {
 		left: 0;
 		width: $size;
 	}
-	35% {			
+	60% {
+		left: 0;
+		width: $size;
+	}
+	75% {			
 		left: $size - $borderWidth;
 		width: 0;
 	}
-	50% {			
+	90% {			
 		left: $size - $borderWidth;
 		width: 0;
 	}
 }
 
 @keyframes anim-bottom-2 {
-	0% {
+	45% {
 		top: $size / 2;
-		height: $borderWidth;
+		height: 0;
 	}
-	10% {
-		top: $size / 2;
-		height: $size / 2 + $borderWidth;
-	}
-	25% {
+	60% {
 		top: $size / 2;
 		height: $size / 2 + $borderWidth;
 	}
-	35% {			
+	75% {
+		top: $size / 2;
+		height: $size / 2 + $borderWidth;
+	}
+	85% {			
 		top: $size;
 		height: 0;
 	}
-	50% {			
+	100% {			
 		top: $size;
 		height: 0;
 	}
 }
 
 @keyframes anim-left-2 {
-	0% {
+	60% {
 		right: 0;
 		width: 0;
 	}
-	10% {		
+	75% {		
 		right: 0;
 		width: $size;
 	}
-	25% {
+	85% {
 		right: 0;
 		width: $size;
 	}
-	35% {				
+	100% {				
 		right: $size;
 		width: 0;
 	}
